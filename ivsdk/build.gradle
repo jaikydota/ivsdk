@@ -1,0 +1,68 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion 28
+
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "0.1.4"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = 1.8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+//    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+
+    implementation 'com.google.flogger:flogger:0.3.1'
+    implementation 'com.google.flogger:flogger-system-backend:0.3.1'
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
+    implementation 'com.google.guava:guava:27.0.1-android'
+    implementation 'com.google.protobuf:protobuf-lite:3.0.0'
+//    implementation 'com.google.protobuf:protobuf-java:3.11.4'
+
+    // 摄像头相关依赖包
+    def camerax_version = "1.0.0-alpha06"
+    implementation "androidx.camera:camera-core:$camerax_version"
+    implementation "androidx.camera:camera-camera2:$camerax_version"
+}
+
+//发布
+publish {
+    userOrg = 'jaikydota'//bintray.com用户名
+    groupId = 'com.jaikydota.ivsdk'//jcenter上的路径
+    artifactId = 'ivsdk-xqe'//项目名称
+    publishVersion = '0.1.3'//版本号
+    desc = 'ctrlvideo interaction video sdk android library'//描述，不重要
+    website = 'https://www.ctrlvideo.com'//网站，不重要
+}
+
+
+// 上传执行
+// gradlew clean build
+// gradlew generatePomFileForReleasePublication
+// gradlew publishReleasePublicationToMavenLocal
+// gradlew bintrayUpload -PbintrayUser=jaikydota -PbintrayKey=0bc349aca89043a5b87739db2cdd7326836ba3fc -PdryRun=false
