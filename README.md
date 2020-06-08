@@ -3,7 +3,7 @@ Emoticon for Android.<br>
 If you need to know about replay dialog information, please click here: https://github.com/jaikydota/Android-ReplayDialog<br>
 
 
-###Using
+### Using
 Add to your layout xml:
 ```
 <com.ctrlvideo.ivsdk.IVView
@@ -38,4 +38,4 @@ private class IVListener implements IVViewListener {
 }
 ```
 
-###*Enjoy this project!*
+### *Enjoy this project!*
