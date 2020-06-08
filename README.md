@@ -1,6 +1,5 @@
 # IVSDK
-Emoticon for Android.<br>
-If you need to know about replay dialog information, please click here: https://github.com/jaikydota/Android-ReplayDialog<br>
+ctrlvideo.com Interaction Video SDK for Android.<br>
 
 
 ### Using
