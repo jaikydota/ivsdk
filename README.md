@@ -38,4 +38,4 @@ private class IVListener implements IVViewListener {
 }
 ```
 
-### *Enjoy this project!*
+### *Enjoy it!*
